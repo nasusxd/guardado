@@ -1,0 +1,181 @@
+body {
+    background-color: black;
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-image: url("https://media.giphy.com/media/5z0Clc1s7uQfxuC1eG/giphy.gif");
+}
+
+#topPagina {
+    background-color: black;
+    width: auto;
+    height: 49px;
+    white-space: nowrap;
+    border: solid 3px white;
+    border-radius: 10px;
+
+}
+
+#tablatop {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 14.28%;
+    align-content: center;
+    text-align: center;
+}
+
+#tablaTop tr td {
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+}
+
+#imgMenuPag {
+    height: 36px;
+    width: auto;
+    border-radius: 10px;
+}
+
+
+#granBloque1 {
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+#granBloque2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#granBloque3{
+    display: flex;
+    justify-content: space-between;
+}
+
+#bloque1 {
+    width: 40%;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: auto;
+    border: dotted white;
+    text-align: center;
+    font-size:x-large;
+    padding: 4px;
+    
+}
+
+#bloque2 {
+    width: 40%;
+    margin-top: 10px;
+    text-align: center; 
+    font-size: x-large;
+    border-top:dotted 3px white ;
+    border-left: dotted 3px white ;
+    border-right: dotted 3px white ;
+    border-top-right-radius: 10px;   
+    border-top-left-radius: 10px;
+}
+
+#ejemploSetup {
+    width: 100%;
+    border-radius: 10px;
+}
+#bloque3{   width: 40%;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 80%;
+    border: dotted white;
+    text-align: center;
+    font-size:x-large;
+    padding: 4px;
+}
+#setupGamer{
+    margin-top: 10px;
+    text-align: center;
+    width: 40%;
+    border-left: dotted 3px white ;
+    border-right: dotted 3px white ;
+   
+}
+
+#setupGamer img{
+    width: 100%;
+    border-radius: 10px;
+}
+#marcasTop{width: 40%;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: auto;
+    border: dotted white;
+    text-align: center;
+    font-size:x-large;
+    padding: 4px;}
+
+ #logosMarcas{
+    width: 10%;
+    height: auto;
+    border-radius: 10px;
+ }
+ #marcasTop table tr{
+ text-align: left;
+ }
+ #bloque6{
+    width: 40%;
+    height: 80%;
+    text-align: center; 
+    font-size: large;
+    border-bottom:dotted 3px white ;
+    border-left: dotted 3px white ;
+    border-right: dotted 3px white ;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+ }
+ #descripMarcas{
+    font-size: x-small;
+ }
+ #links{
+    
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 16.66%;
+    align-content: center;
+    text-align: center;
+ }
+   
+ .pulse-effect {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #007bff; 
+    transition: transform 0.3s ease-in-out; 
+  }
+  .pulse-effect:hover {
+    background-color: #0056b3; 
+  }
+  .pulse-effect:active {
+    transform: scale(0.9); 
+  }
+  #tablaDef{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 50%;
+   
+    text-align: center;
+    border: dashed 3px white;
+     border-radius:  10px;
+     vertical-align: top;
+}
+#tablaDef td{width: 50%;}
+  
+#granBloque4 {
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-between;
+    margin-top: 20px;
+   width: 100%;
+}
+#granBloque4 h2{width: 100%;
+text-align: center;}

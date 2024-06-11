@@ -1,0 +1,370 @@
+<html>
+
+<head>
+    <style>
+        #lista {
+            width: 45%;
+            height: auto;
+        }
+
+        #configFt {
+            width: 100px;
+            height: auto;
+        }
+
+        #bloqueDer {
+            width: 45%;
+            height: auto;
+
+        }
+
+        #bloqueDer img {
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <style>
+        #armaSetup1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #recuadro {
+            border: solid 2px white;
+        }
+
+        #botonCentro {
+            text-align: center;
+        }
+    </style>
+    <div id="lista" style="background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Fpc-rgb&psig=AOvVaw3ZJeXtSywbaC0449vtk__A&ust=1718074384101000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOiloo-E0IYDFQAAAAAdAAAAABAE);">
+        <table>
+            <tr>
+                <td>
+                    <img src="imagenes/pcEj.jpg" id="configFt"> <span id="cantPC">0/1</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="imagenes/monitorCaro.png" id="configFt"> <span id="cantMonitores">0/3</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="imagenes/aurisLogi.jpg" id="configFt"> <span id="cantAuris">0/1</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="imagenes/mouseZowie.jpg" id="configFt"> <span id="cantMouse">0/1</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="imagenes/tecladoLogi.png" id="configFt"> <span id="cantTeclado">0/1</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="imagenes/sillaEj.jpg" id="configFt"> <span id="cantSilla">0/1</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="bloqueDer">
+        <table>
+            <tr id="recuadro">
+                <td>
+                    <img src="imgArmaTuPc/pc1.jpeg" id="configFt">
+                    <p>Pc con un procesador AMD Ryzen 9 7950X, 64gb de
+                        memoria ram ddr5, y una gráfica AMD RX 7900 XTX </p>
+                    <div id="botonCentro"><button onclick="agregarItem(pc1)"
+                            style="background-color: green;">Agregar</button> <button onclick="quitarItem(pc1)"
+                            style="background-color: red;">X</button></div>
+                </td>
+            </tr>
+            <tr id="recuadro">
+                <td>
+                    <img src="imgArmaTuPc/pc2.png" id="configFt">
+                    <p>Pc con un procesador Intel Core I5-12400f, 16gb de memoria ram ddr4, con graficos integrados </p>
+                    <div id="botonCentro"><button onclick="agregarItem(pc2)"
+                            style="background-color: green;">Agregar</button> <button onclick="quitarItem(pc2)"
+                            style="background-color: red;">X</button></div>
+                </td>
+            </tr>
+            <tr id="recuadro">
+                <td>
+                    <img src="imgArmaTuPc/pc3.jpeg" id="configFt">
+                    <p>Pc con un procesador AMD Athlon 3000G, 4gb de memoria ram ddr4, con graficos integrados </p>
+                    <div id="botonCentro"><button onclick="agregarItem(pc3)"
+                            style="background-color: green;">Agregar</button> <button onclick="quitarItem(pc3)"
+                            style="background-color: red;">X</button></div>
+                </td>
+            </tr>
+            <div id="botonCentro"><button onclick="paso2(pc)" style="background-color: green;">siguiente >></button>
+            </div>
+
+        </table>
+
+
+
+    </div>
+
+
+
+    <table>
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/moni1.jpg" id="configFt">
+                <p>49" Samsung Odyssey OLED G9 Curved Ultrawide Gaming Monitor pantalla curva QHD dual de 5120 x 1440
+                    con resolución Quantum Dot OLED de 240 Hz</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('moni1')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('moni1')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/moni2.jpg" id="configFt">
+                <p> Monitor Gamer Asus Va27ehe Led 27 1920 X 1080 75 Hz </p>
+                <div id="botonCentro"><button onclick="agregarItem('moni2')"
+                        style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('moni2')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/moni3.jpg" id="configFt">
+                <p>lg - monitor lcd lg 17 4:3 full hd pivotable</p>
+                <div id="botonCentro"><button onclick="agregarItem('moni3')"
+                        style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('moni3')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+    <table>
+       
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/auri1.jpg" id="configFt">
+                <p>AKG K-240 MKII categoria: estudio                </p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('auri1')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('auri1')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/auris2.jpg" id="configFt">
+                <p>HyperX Cloud Revolver Espectro de sonido con calidad de estudio
+                    Sonido envolvente 7.1 HyperX[1]
+                    Caja de control de audio USB avanzado
+                    categoria: gamer</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('auri2')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('auri2')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/auri3.jpg" id="configFt">
+                <p>Redragon Zeus X Wireless H510 Micrófono flexible incorporado.
+                    Resistentes al polvo.
+                    El largo del cable es de 2 m.
+                    Cómodos y prácticos.
+                    categoria: gamer</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('auri3')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('auri3')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/auri4.jpg" id="configFt">
+                <p>ST-CONQUER // AURICULARES GAMER CON MICRÓFONO categoria: gamer</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('auri4')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('auri4')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/auri5.jpg" id="configFt">
+                <p>XIAOMI MI TRUE EARBUDS BASIC categoria:normales</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('auri5')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('auri5')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+
+
+
+
+    <table>
+       
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/mouse2jpg.jpg" id="configFt">
+                <p>Razer Basilisk V2 Preto Rgb Chroma 20.000 dpi 11botones </p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('mouse1')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('mouse1')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/mouse1.jpg" id="configFt">
+                <p>Logitech G Pro Gaming Sensor óptico.
+                    Resolución: 12000dpi.
+                    Contiene cable.
+                    Cuenta con 6 botones.</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('mouse2')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('mouse2')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/mouse3.png" id="configFt">
+                <p>REDRAGON Mouse M711 Cobra FPS 32000 dpi 8 botones</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('mouse3')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('mouse3')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/mouse4.png" id="configFt">
+                <p>Vsg Hero 7200 Dpi 7 botones</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('mouse4')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('mouse4')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/mouse5.jpg" id="configFt">
+                <p>Genius XScroll 800 dpi 3 botones</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('mouse5')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('mouse5')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+    <table>
+       
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/teclado1.jpg" id="configFt">
+                <p>RAZER HUNTSMAN V2 ESPAÑOL CLICKY PURPLE SWITCH </p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('teclado1')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('teclado1')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/teclado2.jpg" id="configFt">
+                <p>Redragon Kumara K552 Qwerty Outemu Blue</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('teclado2')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('teclado2')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/teclado3.jpg" id="configFt">
+                <p>NOGA-NET NKB-78011</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('teclado3')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('teclado3')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+       
+
+    </table>
+
+    <table>
+       
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/silla1.jpg" id="configFt">
+                <p> Corsair Tc100 Relaxed Materiales: Metal, espuma, poliuretano. Angulo de respaldo: 90° - 160</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('silla1')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('silla1')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/silla2.jpg" id="configFt">
+                <p>Silla Cool 1D Respaldo reclinable con mecanismo Synchron, Respaldo de Nylon, revestido con tela de red elastic Mesh</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('silla2')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('silla2')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr id="recuadro">
+            <td>
+                <img src="imgArmaTuPc/silla3.jpg" id="configFt">
+                <p>Banqueta Voss 2000 Titan</p>
+                <div id="botonCentro">
+                    <button onclick="agregarItem('silla3')" style="background-color: green;">Agregar</button>
+                    <button onclick="quitarItem('silla3')" style="background-color: red;">X</button>
+                </div>
+            </td>
+        </tr>
+       
+
+    </table>
+
+    <div id="terminado"> 
+        <h1>Terminaste tu Setup</h1>
+        <p>tu puntaje fue de ${resultados.puntajeActual}/ ${resultados.puntajeMaximoPosible}  </p>
+
+        </div>
+        <div style="">Humilde</div> <div> <img src="imgArmaTuPc/pcvieja.jpg" style="width: 40%;"></div>
+        <div style="">Normal</div> <div> <img src="imgArmaTuPc/pcNormal.jpg" style="width: 40%;"></div>
+        <div style="">Buena</div> <div> <img src="imgArmaTuPc/pcBuena.jpeg" style="width: 40%;"></div>
+        <div style="">tryHard</div> <div> <img src="imgArmaTuPc/pctryhard.jpg" style="width: 40%;"></div>
+</body>
+//*filter
+some
+//find
+
+</html>

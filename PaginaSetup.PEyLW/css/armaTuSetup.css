@@ -1,0 +1,101 @@
+#armaSetup1 {
+  margin: 30px;
+  width: 100%;
+  height: 800px;
+  border: 3px dotted white;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ background-image: url(https://ergo2play.com/cdn/shop/articles/M314_900x.jpg?v=1633105598);
+  background-position: center;
+  background-size: cover;
+  position:relative;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.pulse-effect2 {
+  border: solid 3px white;
+  color: white;
+  padding: 30px 60px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: black;
+  position: absolute;
+  top: 40%;
+  ;
+  left: 40%;
+
+}
+
+.pulse-effect2:hover {
+  background-color: dimgray;
+  border: solid 3px white;
+}
+
+.pulse-effect2:active {
+  transform: scale(0.9);
+}
+
+#lista {
+  width: 50%;
+  height: auto;
+}
+
+
+#configFt {
+  width: 100px;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#bloqueDer {
+  width: 50%;
+  height: auto;
+}
+
+#bloqueDer img {
+  float: left;
+  margin-right: 20px;
+}
+#recuadro {
+  border: solid 2px white;
+}
+#botonCentro{
+  text-align: center;
+}
+#armaSetup1 span{
+  font-size: xx-large;
+}
+
+#terminado{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: solid white 1px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: x-large;
+}
+#terminado img{
+  border-radius: 10px;
+}
+#terminado button{border: none;
+  color: white;
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #007bff; 
+  transition: transform 0.3s ease-in-out; 
+}
+
+#terminado button:hover {
+  background-color: #0056b3; 
+}
+#terminado button:active {
+  transform: scale(0.9); 
+}
