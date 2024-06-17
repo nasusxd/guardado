@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Parcial JS </title>
+    <link href="default.css" rel="stylesheet" type="text/css" />
+
+  <script>
+    // Resuelva el parcial en esta seccion
+    // Ud. puede usar o no esta variable. No es obligatorio.
+    const RegistroVotantes = new Array();
+    var votosKang = 0;
+    var votosKodos = 0;
+    var votosBlanco = 0;
+
+    
+    function registrarVoto() {
+
+      var txDni = document.getElementById("txDNI");
+      var txCandidato = document.getElementById("txCandidato");
+      var txGenero = document.getElementById("txSexo");
+
+       //Paso todo a mayusculas para asegurarme las comparaciones correctas y que se pueda ingresar cualquier valor
+      var candidato = txCandidato.value.toUpperCase();
+      var genero = txGenero.value.toUpperCase();
+
+      //convierto el dni a entero
+      const dni = parseInt(txDni.value)
+
+      //Llamo a una funcion para validar los campos
+      var resValidacion = validarCampos(dni, candidato, genero);
+
+      
+      //Si la validacion es correcta, llamo a otra funcion para agregar el voto
+      if (resValidacion) {
+        cargarVoto(dni, candidato, genero);
+      }
+
+    }
+
+    function validarCampos(dni, candidato, genero) {
+      
+      var validacionOK=true;
+
+      var txDni = document.getElementById("txDNI");
+      var txCandidato = document.getElementById("txCandidato");
+      var txGenero = document.getElementById("txSexo");
+
+      //Verifico DNI - El rango de valores y que sea un valor numerico
+      if (dni < 10000000 || dni > 99999999 || isNaN(dni)) {
+        validacionOK=false;
+        txDNI.style.border = "1px solid red";
+        txDNI.style.backgroundColor = "#FFB0B0";
+      }
+
+      //Verifico candidatos válidos
+      if (candidato != "KANG" && candidato != "KODOS" && candidato != "BLANCO") {
+        validacionOK=false;
+        txCandidato.style.border = "1px solid red";
+      }
+
+      //Verifico sexos válidos
+      if (genero != "M" && genero != "F") {
+        validacionOK=false;
+        txSexo.style.border = "1px solid red";
+      }
+
+      return validacionOK;
+
+
+    }
+
+    function LimpiarForm()
+    {      
+    document.getElementById('txCandidato').value= "";
+    document.getElementById('txCandidato').style.border = "1px solid";
+    document.getElementById('txDNI').value= "";
+    document.getElementById('txDNI').style.border = "1px solid";
+    document.getElementById('txSexo').value= "";
+    document.getElementById('txSexo').style.border = "1px solid";
+    }
+
+    //Verifico candidatos válidos
+    if (candidato != "KANG" && candidato != "KODOS" && candidato != "BLANCO") {
+      validacionOK=false;
+      txCandidato.style.border = "1px solid red";
+    }
+
+    //Verifico sexos válidos
+    if (genero != "M" && genero != "F") {
+      validacionOK=false;
+      txSexo.style.border = "1px solid red";
+    }
+
+
+    function cargarVoto(dni, candidato, genero) {
+
+      var votoDuplicado = RegistroVotantes.includes(dni);
+
+      if (votoDuplicado) {
+        alert("Esta persona ya emitió su voto. El fraude está mal claro que sí.");
+      }else {
+        //Agrego en el arreglo el dni del votante
+        RegistroVotantes.push(dni);
+
+        //Agrego en el div de votantes el DNI
+        var elemento = document.getElementById("Votantes");
+       
+        elemento.innerHTML += dni +  " - ";
+       
+        //Sumo el voto al candidato que corresponde
+        SumarVotos(candidato);
+        //Limpio los controles
+        LimpiarForm();
+      }
+    }
+
+
+    function SumarVotos(candidato) {
+      //Incremento contadores de votos
+      switch (candidato) {
+        case "KANG":
+          votosKang++;
+          break;
+        case "KODOS":
+          votosKodos++;
+          break;
+        case "BLANCO":
+          votosBlanco++;
+          break;
+      }
+
+      //Actualizo votos de cada candidato
+      document.getElementById("ResultadosKang").innerHTML = votosKang;
+      document.getElementById("ResultadosKodos").innerHTML = votosKodos;
+      document.getElementById("ResultadosBlanco").innerHTML = votosBlanco;
+
+    }
+
+    function cerrarMesa() {
+      var strGanador = "";
+      var diferencia = 0;
+
+      //calculo diferencias
+      if (votosKang > votosKodos) {
+        diferencia = votosKang - votosKodos;
+        strGanador = "¡Ganó KANG por " + diferencia + " votos!<img src='images/VoteKang.png' height='80'>";
+      } else if (votosKodos > votosKang) {
+        diferencia = votosKodos - votosKang;
+        strGanador = "¡Ganó KODOS por " + diferencia + " votos! <img src='images/VoteKodos.png' height='80'>";
+      } else {
+        strGanador = '¡Empate!';
+      } 
+
+      var resultado = document.getElementById("dResultados");
+           
+      resultado.innerHTML = strGanador;
+      resultado.style = "display:flex; justify-content: center; align-items: center; flex-direction: column;"
+      
+      //Deshabilitar los botones y los textboxes
+      document.getElementById("btnRegistrar").disabled = true;
+      document.getElementById("btnCerrarMesa").disabled = true;
+      document.getElementById("txDNI").disabled = true;
+      document.getElementById("txCandidato").disabled = true;
+      document.getElementById("txSexo").disabled = true;
+
+    }
+  </script>
+
+
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="logo" style="margin-left: 15px">
+        <h1><a href="#">Programación Estática y Laboratorio Web</a></h1>
+        <h2><a href="#">Parcial JS - 27/06/2023</a></h2>
+      </div>
+    </div>
+    <div id="menu">
+      <ul>
+        <li><a href="Consigna.html">Consigna</a></li>
+        <li><a href="EjercicioJSParcial.html">HOJA Ejercicio</a></li>
+      </ul>
+    </div>
+    <div id="content">
+
+      <form>
+        <table style="padding: 10px;">
+          <tr>
+            <td>Candidato:</td>
+            <td><input id="txCandidato" name="txCandidato" type="text" style="width:280px" /></td>
+          </tr>
+          <tr>
+            <td>DNI:</td>
+            <td><input id="txDNI" name="txDNI" type="text" style="width:280px" /></td>
+          </tr>
+          <tr>
+            <td>Sexo:</td>
+            <td><input id="txSexo" name="txSexo" type="text" style="width:64px" /></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><input type="button" id="btnRegistrar" onclick="registrarVoto()" value="Registrar">&nbsp;<input type="button" id="btnCierreMesa" onclick="cerrarMesa()" value="Cierre de mesa"></td>
+          </tr>
+
+        </table>
+      </form>
+      <p></p>
+
+      <div id="dResultados" style="display: nosne;">
+        <h2>Resultados:</h2>
+        <!-- Ingrese aquí quien gano, por cuantos votos, y su imagen-->
+      </div>
+
+
+      <div style="background-color: lightblue; border: 1px solid black;padding: 10px;">
+        <span id="ResultadosKang" style="font-size: 72px;">0</span>
+        <img src="images/VoteKang.png" height="80" style="float:right">
+
+      </div>
+      <br />
+
+      <div style="background-color: lightpink; border: 1px solid black;padding: 10px;">
+        <span id="ResultadosKodos" style="font-size: 72px;">0</span>
+        <img src="images/VoteKodos.png" height="80" style="float:right">
+
+      </div>
+      <br />
+
+      <div style="padding: 10px;">
+        <span style="font-size: 36px;">En Blanco: </span> <span id="ResultadosBlanco" style="font-size: 36px;">0</span>
+      </div>
+
+      <br />
+
+      Votantes:
+      <div id="Votantes" style="border: 1px solid black;padding: 10px;">
+
+
+      </div>
+
+
+      </table>
+
+    </div>
+    <div id="footer" style="margin-top: 240px;">
+      <p id="legal">Copyright &copy; AtomoHost. All Rights Reserved.
+        Designed by <a href="http://www.freecsstemplates.org/">Free CSS
+          Templates</a>.</p>
+      <p id="links"><a href="#">Privacy Policy</a> | <a href="#">Terms
+          of Use</a></p>
+    </div>
+    <br />
+    <br />
+  </body>
+
+</html>
